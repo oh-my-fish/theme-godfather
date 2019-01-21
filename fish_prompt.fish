@@ -29,6 +29,9 @@ function fish_prompt
 
   set -l cwd $cyan(basename (prompt_pwd))
 
+  # output the virtualenv if any
+  virtualenv_prompt 
+  
   # output the prompt, left to right:
   # display 'user@host:'
   echo -n -s $green (whoami) $dark_green @ $green (hostname|cut -d . -f 1) ": "
@@ -51,4 +54,12 @@ function fish_prompt
   # terminate with a nice prompt char:
   echo -n -s ' » ' $normal
 
+end
+
+function virtualenv_prompt
+    if [ -n "$VIRTUAL_ENV" ]
+    	set_color blue
+        printf "(%s)" (basename $VIRTUAL_ENV)
+        set_color normal
+    end
 end
