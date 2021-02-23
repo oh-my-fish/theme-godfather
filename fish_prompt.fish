@@ -31,7 +31,7 @@ function fish_prompt
 
   # output the prompt, left to right:
   # display 'user@host:'
-  echo -n -s $green (whoami) $dark_green @ $green (hostname|cut -d . -f 1) ": "
+  echo -n -s $green (whoami) $dark_green @ $green (echo $hostname|cut -d . -f 1) ": "
 
   # display the current directory name:
   echo -n -s $cwd $normal
