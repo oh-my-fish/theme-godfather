@@ -18,5 +18,5 @@ Clean git theme with homey feel and git-centric features.
 #### Credits:
 
 Colors and git functions taken from [amio](https://github.com/amio)'s
-[edan](https://github.com/bpinto/oh-my-fish/tree/master/themes/edan) theme.
+[edan](https://github.com/oh-my-fish/theme-edan) theme.
 
