@@ -1,7 +1,12 @@
 # fish theme: goddy
 
 function _git_branch_name
-  echo (command git symbolic-ref HEAD 2> /dev/null | sed -e 's|^refs/heads/||')
+  set -l branch (command git branch --show-current 2> /dev/null)
+  if test -n "$branch"
+    echo "$branch"
+  else
+    echo (git log -1 --format=%h 2> /dev/null)
+  end
 end
 
 function _is_git_dirty
