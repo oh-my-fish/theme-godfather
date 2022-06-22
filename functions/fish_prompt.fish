@@ -1,4 +1,4 @@
-# fish theme: goddy
+# fish theme: godfather
 
 function _git_branch_name
   set -l branch (command git branch --show-current 2> /dev/null)
